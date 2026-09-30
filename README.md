@@ -64,7 +64,7 @@ open "/Applications/Dark Safari.app"
 Launching the app registers the extension with Safari. Extension enablement is
 per-user: in each macOS account, Safari → Settings → Extensions → enable
 **Dark Safari**, then grant website access ("Always Allow on Every Website", or
-per-site via the toolbar button). Because the app is properly signed it stays
+per-site via the toolbar button). Because the app is properly signed, it stays
 enabled across restarts — no "Allow unsigned extensions" needed. Other users
 may see a one-time Gatekeeper prompt on first launch.
 

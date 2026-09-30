@@ -31,6 +31,38 @@
       .replace(/\+/g, "");
   }
 
+  // Named-key tokens (from the commands manifest) → KeyboardEvent.code values.
+  const KEY_CODES = {
+    Comma: "Comma", Period: "Period", Space: "Space",
+    Home: "Home", End: "End", PageUp: "PageUp", PageDown: "PageDown",
+    Insert: "Insert", Delete: "Delete",
+    Up: "ArrowUp", Down: "ArrowDown", Left: "ArrowLeft", Right: "ArrowRight"
+  };
+
+  // Match a keydown against a shortcut string like "Alt+Shift+F". We compare on
+  // event.code, not event.key, because Option+letter on macOS yields a special
+  // character in event.key ("F" → "ƒ") while the physical code stays "KeyF".
+  function matchesShortcut(e, shortcut) {
+    const mod = { alt: false, shift: false, ctrl: false, meta: false };
+    let key = "";
+    for (const t of shortcut.split("+")) {
+      const l = t.toLowerCase();
+      if (l === "alt" || l === "option") mod.alt = true;
+      else if (l === "shift") mod.shift = true;
+      else if (l === "ctrl" || l === "control" || l === "macctrl") mod.ctrl = true;
+      else if (l === "command" || l === "cmd") mod.meta = true;
+      else key = t;
+    }
+    if (e.altKey !== mod.alt || e.shiftKey !== mod.shift ||
+        e.ctrlKey !== mod.ctrl || e.metaKey !== mod.meta) return false;
+    let code = null;
+    if (/^[A-Za-z]$/.test(key)) code = "Key" + key.toUpperCase();
+    else if (/^[0-9]$/.test(key)) code = "Digit" + key;
+    else if (/^F[0-9]{1,2}$/.test(key)) code = key;
+    else code = KEY_CODES[key] || null;
+    return code ? e.code === code : e.key.toUpperCase() === key.toUpperCase();
+  }
+
   async function renderShortcuts() {
     const foot = $("shortcuts");
     let cmds;
@@ -44,6 +76,17 @@
       .filter((c) => c && c.shortcut)
       .map((c) => `${prettyShortcut(c.shortcut)} ${SHORTCUT_LABELS[c.name] || c.description || c.name}`);
     foot.textContent = parts.length ? parts.join(" · ") : "No keyboard shortcuts set";
+
+    // The open-popup command only opens; there is no API to close the popup.
+    // While it's open and focused, re-pressing that same shortcut closes it, so
+    // one key toggles the popup both ways. Escape closes it too.
+    const open = byName["_execute_action"];
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" || (open && open.shortcut && matchesShortcut(e, open.shortcut))) {
+        e.preventDefault();
+        window.close();
+      }
+    });
   }
 
   // Effective values seen at each scope, and the parent used for overrides.
