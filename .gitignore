@@ -1,3 +1,4 @@
 xcode/DerivedData/
 *.xcuserdatad/
 .DS_Store
+extension/icons/
