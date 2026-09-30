@@ -1,0 +1,993 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A1B57DA82FFDA29B00DCC6DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B57DA72FFDA29B00DCC6DA /* AppDelegate.swift */; };
+		A1B57DAA2FFDA29B00DCC6DA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B57DA92FFDA29B00DCC6DA /* SceneDelegate.swift */; };
+		A1B57DAD2FFDA29B00DCC6DA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1B57DAB2FFDA29B00DCC6DA /* LaunchScreen.storyboard */; };
+		A1B57DB02FFDA29B00DCC6DA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1B57DAE2FFDA29B00DCC6DA /* Main.storyboard */; };
+		A1B57DB92FFDA29B00DCC6DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B57DB82FFDA29B00DCC6DA /* AppDelegate.swift */; };
+		A1B57DBC2FFDA29B00DCC6DA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1B57DBA2FFDA29B00DCC6DA /* Main.storyboard */; };
+		A1B57DC32FFDA29B00DCC6DA /* Dark Safari Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = A1B57DC22FFDA29B00DCC6DA /* Dark Safari Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		A1B57DCD2FFDA29B00DCC6DA /* Dark Safari Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = A1B57DCC2FFDA29B00DCC6DA /* Dark Safari Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		A1B57DD22FFDA29B00DCC6DA /* Main.html in Resources */ = {isa = PBXBuildFile; fileRef = A1B57D972FFDA29A00DCC6DA /* Main.html */; };
+		A1B57DD32FFDA29B00DCC6DA /* Main.html in Resources */ = {isa = PBXBuildFile; fileRef = A1B57D972FFDA29A00DCC6DA /* Main.html */; };
+		A1B57DD42FFDA29B00DCC6DA /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B57D992FFDA29A00DCC6DA /* Icon.png */; };
+		A1B57DD52FFDA29B00DCC6DA /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B57D992FFDA29A00DCC6DA /* Icon.png */; };
+		A1B57DD62FFDA29B00DCC6DA /* Style.css in Resources */ = {isa = PBXBuildFile; fileRef = A1B57D9A2FFDA29A00DCC6DA /* Style.css */; };
+		A1B57DD72FFDA29B00DCC6DA /* Style.css in Resources */ = {isa = PBXBuildFile; fileRef = A1B57D9A2FFDA29A00DCC6DA /* Style.css */; };
+		A1B57DD82FFDA29B00DCC6DA /* Script.js in Resources */ = {isa = PBXBuildFile; fileRef = A1B57D9B2FFDA29A00DCC6DA /* Script.js */; };
+		A1B57DD92FFDA29B00DCC6DA /* Script.js in Resources */ = {isa = PBXBuildFile; fileRef = A1B57D9B2FFDA29A00DCC6DA /* Script.js */; };
+		A1B57DDA2FFDA29B00DCC6DA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B57D9C2FFDA29A00DCC6DA /* ViewController.swift */; };
+		A1B57DDB2FFDA29B00DCC6DA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B57D9C2FFDA29A00DCC6DA /* ViewController.swift */; };
+		A1B57DDC2FFDA29B00DCC6DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1B57D9D2FFDA29B00DCC6DA /* Assets.xcassets */; };
+		A1B57DDD2FFDA29B00DCC6DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1B57D9D2FFDA29B00DCC6DA /* Assets.xcassets */; };
+		A1B57DDE2FFDA29B00DCC6DA /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B57D9F2FFDA29B00DCC6DA /* SafariWebExtensionHandler.swift */; };
+		A1B57DDF2FFDA29B00DCC6DA /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B57D9F2FFDA29B00DCC6DA /* SafariWebExtensionHandler.swift */; };
+		A1B57DF72FFDA29B00DCC6DA /* popup in Resources */ = {isa = PBXBuildFile; fileRef = A1B57DF12FFDA29B00DCC6DA /* popup */; };
+		A1B57DF82FFDA29B00DCC6DA /* background.js in Resources */ = {isa = PBXBuildFile; fileRef = A1B57DF22FFDA29B00DCC6DA /* background.js */; };
+		A1B57DF92FFDA29B00DCC6DA /* content in Resources */ = {isa = PBXBuildFile; fileRef = A1B57DF32FFDA29B00DCC6DA /* content */; };
+		A1B57DFA2FFDA29B00DCC6DA /* shared in Resources */ = {isa = PBXBuildFile; fileRef = A1B57DF42FFDA29B00DCC6DA /* shared */; };
+		A1B57DFB2FFDA29B00DCC6DA /* icons in Resources */ = {isa = PBXBuildFile; fileRef = A1B57DF52FFDA29B00DCC6DA /* icons */; };
+		A1B57DFC2FFDA29B00DCC6DA /* manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = A1B57DF62FFDA29B00DCC6DA /* manifest.json */; };
+		A1B57DFD2FFDA29B00DCC6DA /* popup in Resources */ = {isa = PBXBuildFile; fileRef = A1B57DF12FFDA29B00DCC6DA /* popup */; };
+		A1B57DFE2FFDA29B00DCC6DA /* background.js in Resources */ = {isa = PBXBuildFile; fileRef = A1B57DF22FFDA29B00DCC6DA /* background.js */; };
+		A1B57DFF2FFDA29B00DCC6DA /* content in Resources */ = {isa = PBXBuildFile; fileRef = A1B57DF32FFDA29B00DCC6DA /* content */; };
+		A1B57E002FFDA29B00DCC6DA /* shared in Resources */ = {isa = PBXBuildFile; fileRef = A1B57DF42FFDA29B00DCC6DA /* shared */; };
+		A1B57E012FFDA29B00DCC6DA /* icons in Resources */ = {isa = PBXBuildFile; fileRef = A1B57DF52FFDA29B00DCC6DA /* icons */; };
+		A1B57E022FFDA29B00DCC6DA /* manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = A1B57DF62FFDA29B00DCC6DA /* manifest.json */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A1B57DC42FFDA29B00DCC6DA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A1B57D912FFDA29A00DCC6DA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A1B57DC12FFDA29B00DCC6DA;
+			remoteInfo = "Dark Safari Extension (iOS)";
+		};
+		A1B57DCE2FFDA29B00DCC6DA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A1B57D912FFDA29A00DCC6DA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A1B57DCB2FFDA29B00DCC6DA;
+			remoteInfo = "Dark Safari Extension (macOS)";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A1B57DE52FFDA29B00DCC6DA /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				A1B57DC32FFDA29B00DCC6DA /* Dark Safari Extension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A1B57DEC2FFDA29B00DCC6DA /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				A1B57DCD2FFDA29B00DCC6DA /* Dark Safari Extension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		A1B57D982FFDA29A00DCC6DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = Base; path = Base.lproj/Main.html; sourceTree = "<group>"; };
+		A1B57D992FFDA29A00DCC6DA /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		A1B57D9A2FFDA29A00DCC6DA /* Style.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = Style.css; sourceTree = "<group>"; };
+		A1B57D9B2FFDA29A00DCC6DA /* Script.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = Script.js; sourceTree = "<group>"; };
+		A1B57D9C2FFDA29A00DCC6DA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A1B57D9D2FFDA29B00DCC6DA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A1B57D9F2FFDA29B00DCC6DA /* SafariWebExtensionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariWebExtensionHandler.swift; sourceTree = "<group>"; };
+		A1B57DA42FFDA29B00DCC6DA /* Dark Safari.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dark Safari.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1B57DA72FFDA29B00DCC6DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A1B57DA92FFDA29B00DCC6DA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		A1B57DAC2FFDA29B00DCC6DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A1B57DAF2FFDA29B00DCC6DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A1B57DB12FFDA29B00DCC6DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A1B57DB62FFDA29B00DCC6DA /* Dark Safari.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dark Safari.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1B57DB82FFDA29B00DCC6DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A1B57DBB2FFDA29B00DCC6DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A1B57DBD2FFDA29B00DCC6DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A1B57DC22FFDA29B00DCC6DA /* Dark Safari Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Dark Safari Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1B57DC72FFDA29B00DCC6DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A1B57DCC2FFDA29B00DCC6DA /* Dark Safari Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Dark Safari Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1B57DD12FFDA29B00DCC6DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A1B57DF12FFDA29B00DCC6DA /* popup */ = {isa = PBXFileReference; lastKnownFileType = folder; name = popup; path = ../../../extension/popup; sourceTree = "<group>"; };
+		A1B57DF22FFDA29B00DCC6DA /* background.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = background.js; path = ../../../extension/background.js; sourceTree = "<group>"; };
+		A1B57DF32FFDA29B00DCC6DA /* content */ = {isa = PBXFileReference; lastKnownFileType = folder; name = content; path = ../../../extension/content; sourceTree = "<group>"; };
+		A1B57DF42FFDA29B00DCC6DA /* shared */ = {isa = PBXFileReference; lastKnownFileType = folder; name = shared; path = ../../../extension/shared; sourceTree = "<group>"; };
+		A1B57DF52FFDA29B00DCC6DA /* icons */ = {isa = PBXFileReference; lastKnownFileType = folder; name = icons; path = ../../../extension/icons; sourceTree = "<group>"; };
+		A1B57DF62FFDA29B00DCC6DA /* manifest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = manifest.json; path = ../../../extension/manifest.json; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A1B57DA12FFDA29B00DCC6DA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A1B57DB32FFDA29B00DCC6DA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A1B57DBF2FFDA29B00DCC6DA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A1B57DC92FFDA29B00DCC6DA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A1B57D902FFDA29A00DCC6DA = {
+			isa = PBXGroup;
+			children = (
+				A1B57D952FFDA29A00DCC6DA /* Shared (App) */,
+				A1B57D9E2FFDA29B00DCC6DA /* Shared (Extension) */,
+				A1B57DA62FFDA29B00DCC6DA /* iOS (App) */,
+				A1B57DB72FFDA29B00DCC6DA /* macOS (App) */,
+				A1B57DC62FFDA29B00DCC6DA /* iOS (Extension) */,
+				A1B57DD02FFDA29B00DCC6DA /* macOS (Extension) */,
+				A1B57DA52FFDA29B00DCC6DA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A1B57D952FFDA29A00DCC6DA /* Shared (App) */ = {
+			isa = PBXGroup;
+			children = (
+				A1B57D9C2FFDA29A00DCC6DA /* ViewController.swift */,
+				A1B57D9D2FFDA29B00DCC6DA /* Assets.xcassets */,
+				A1B57D962FFDA29A00DCC6DA /* Resources */,
+			);
+			path = "Shared (App)";
+			sourceTree = "<group>";
+		};
+		A1B57D962FFDA29A00DCC6DA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A1B57D972FFDA29A00DCC6DA /* Main.html */,
+				A1B57D992FFDA29A00DCC6DA /* Icon.png */,
+				A1B57D9A2FFDA29A00DCC6DA /* Style.css */,
+				A1B57D9B2FFDA29A00DCC6DA /* Script.js */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		A1B57D9E2FFDA29B00DCC6DA /* Shared (Extension) */ = {
+			isa = PBXGroup;
+			children = (
+				A1B57DF02FFDA29B00DCC6DA /* Resources */,
+				A1B57D9F2FFDA29B00DCC6DA /* SafariWebExtensionHandler.swift */,
+			);
+			path = "Shared (Extension)";
+			sourceTree = "<group>";
+		};
+		A1B57DA52FFDA29B00DCC6DA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A1B57DA42FFDA29B00DCC6DA /* Dark Safari.app */,
+				A1B57DB62FFDA29B00DCC6DA /* Dark Safari.app */,
+				A1B57DC22FFDA29B00DCC6DA /* Dark Safari Extension.appex */,
+				A1B57DCC2FFDA29B00DCC6DA /* Dark Safari Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A1B57DA62FFDA29B00DCC6DA /* iOS (App) */ = {
+			isa = PBXGroup;
+			children = (
+				A1B57DA72FFDA29B00DCC6DA /* AppDelegate.swift */,
+				A1B57DA92FFDA29B00DCC6DA /* SceneDelegate.swift */,
+				A1B57DAB2FFDA29B00DCC6DA /* LaunchScreen.storyboard */,
+				A1B57DAE2FFDA29B00DCC6DA /* Main.storyboard */,
+				A1B57DB12FFDA29B00DCC6DA /* Info.plist */,
+			);
+			path = "iOS (App)";
+			sourceTree = "<group>";
+		};
+		A1B57DB72FFDA29B00DCC6DA /* macOS (App) */ = {
+			isa = PBXGroup;
+			children = (
+				A1B57DB82FFDA29B00DCC6DA /* AppDelegate.swift */,
+				A1B57DBA2FFDA29B00DCC6DA /* Main.storyboard */,
+				A1B57DBD2FFDA29B00DCC6DA /* Info.plist */,
+			);
+			path = "macOS (App)";
+			sourceTree = "<group>";
+		};
+		A1B57DC62FFDA29B00DCC6DA /* iOS (Extension) */ = {
+			isa = PBXGroup;
+			children = (
+				A1B57DC72FFDA29B00DCC6DA /* Info.plist */,
+			);
+			path = "iOS (Extension)";
+			sourceTree = "<group>";
+		};
+		A1B57DD02FFDA29B00DCC6DA /* macOS (Extension) */ = {
+			isa = PBXGroup;
+			children = (
+				A1B57DD12FFDA29B00DCC6DA /* Info.plist */,
+			);
+			path = "macOS (Extension)";
+			sourceTree = "<group>";
+		};
+		A1B57DF02FFDA29B00DCC6DA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A1B57DF12FFDA29B00DCC6DA /* popup */,
+				A1B57DF22FFDA29B00DCC6DA /* background.js */,
+				A1B57DF32FFDA29B00DCC6DA /* content */,
+				A1B57DF42FFDA29B00DCC6DA /* shared */,
+				A1B57DF52FFDA29B00DCC6DA /* icons */,
+				A1B57DF62FFDA29B00DCC6DA /* manifest.json */,
+			);
+			name = Resources;
+			path = "Shared (Extension)";
+			sourceTree = SOURCE_ROOT;
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A1B57DA32FFDA29B00DCC6DA /* Dark Safari (iOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A1B57DE62FFDA29B00DCC6DA /* Build configuration list for PBXNativeTarget "Dark Safari (iOS)" */;
+			buildPhases = (
+				A1B57DA02FFDA29B00DCC6DA /* Sources */,
+				A1B57DA12FFDA29B00DCC6DA /* Frameworks */,
+				A1B57DA22FFDA29B00DCC6DA /* Resources */,
+				A1B57DE52FFDA29B00DCC6DA /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A1B57DC52FFDA29B00DCC6DA /* PBXTargetDependency */,
+			);
+			name = "Dark Safari (iOS)";
+			packageProductDependencies = (
+			);
+			productName = "Dark Safari (iOS)";
+			productReference = A1B57DA42FFDA29B00DCC6DA /* Dark Safari.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A1B57DB52FFDA29B00DCC6DA /* Dark Safari (macOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A1B57DED2FFDA29B00DCC6DA /* Build configuration list for PBXNativeTarget "Dark Safari (macOS)" */;
+			buildPhases = (
+				A1B57DB22FFDA29B00DCC6DA /* Sources */,
+				A1B57DB32FFDA29B00DCC6DA /* Frameworks */,
+				A1B57DB42FFDA29B00DCC6DA /* Resources */,
+				A1B57DEC2FFDA29B00DCC6DA /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A1B57DCF2FFDA29B00DCC6DA /* PBXTargetDependency */,
+			);
+			name = "Dark Safari (macOS)";
+			packageProductDependencies = (
+			);
+			productName = "Dark Safari (macOS)";
+			productReference = A1B57DB62FFDA29B00DCC6DA /* Dark Safari.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A1B57DC12FFDA29B00DCC6DA /* Dark Safari Extension (iOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A1B57DE22FFDA29B00DCC6DA /* Build configuration list for PBXNativeTarget "Dark Safari Extension (iOS)" */;
+			buildPhases = (
+				A1B57DBE2FFDA29B00DCC6DA /* Sources */,
+				A1B57DBF2FFDA29B00DCC6DA /* Frameworks */,
+				A1B57DC02FFDA29B00DCC6DA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Dark Safari Extension (iOS)";
+			packageProductDependencies = (
+			);
+			productName = "Dark Safari Extension (iOS)";
+			productReference = A1B57DC22FFDA29B00DCC6DA /* Dark Safari Extension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		A1B57DCB2FFDA29B00DCC6DA /* Dark Safari Extension (macOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A1B57DE92FFDA29B00DCC6DA /* Build configuration list for PBXNativeTarget "Dark Safari Extension (macOS)" */;
+			buildPhases = (
+				A1B57DC82FFDA29B00DCC6DA /* Sources */,
+				A1B57DC92FFDA29B00DCC6DA /* Frameworks */,
+				A1B57DCA2FFDA29B00DCC6DA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Dark Safari Extension (macOS)";
+			packageProductDependencies = (
+			);
+			productName = "Dark Safari Extension (macOS)";
+			productReference = A1B57DCC2FFDA29B00DCC6DA /* Dark Safari Extension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A1B57D912FFDA29A00DCC6DA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2660;
+				LastUpgradeCheck = 2660;
+				TargetAttributes = {
+					A1B57DA32FFDA29B00DCC6DA = {
+						CreatedOnToolsVersion = 26.6;
+					};
+					A1B57DB52FFDA29B00DCC6DA = {
+						CreatedOnToolsVersion = 26.6;
+					};
+					A1B57DC12FFDA29B00DCC6DA = {
+						CreatedOnToolsVersion = 26.6;
+					};
+					A1B57DCB2FFDA29B00DCC6DA = {
+						CreatedOnToolsVersion = 26.6;
+					};
+				};
+			};
+			buildConfigurationList = A1B57D942FFDA29A00DCC6DA /* Build configuration list for PBXProject "Dark Safari" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A1B57D902FFDA29A00DCC6DA;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = A1B57DA52FFDA29B00DCC6DA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A1B57DA32FFDA29B00DCC6DA /* Dark Safari (iOS) */,
+				A1B57DB52FFDA29B00DCC6DA /* Dark Safari (macOS) */,
+				A1B57DC12FFDA29B00DCC6DA /* Dark Safari Extension (iOS) */,
+				A1B57DCB2FFDA29B00DCC6DA /* Dark Safari Extension (macOS) */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A1B57DA22FFDA29B00DCC6DA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1B57DD42FFDA29B00DCC6DA /* Icon.png in Resources */,
+				A1B57DAD2FFDA29B00DCC6DA /* LaunchScreen.storyboard in Resources */,
+				A1B57DD22FFDA29B00DCC6DA /* Main.html in Resources */,
+				A1B57DD82FFDA29B00DCC6DA /* Script.js in Resources */,
+				A1B57DDC2FFDA29B00DCC6DA /* Assets.xcassets in Resources */,
+				A1B57DB02FFDA29B00DCC6DA /* Main.storyboard in Resources */,
+				A1B57DD62FFDA29B00DCC6DA /* Style.css in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A1B57DB42FFDA29B00DCC6DA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1B57DD52FFDA29B00DCC6DA /* Icon.png in Resources */,
+				A1B57DD72FFDA29B00DCC6DA /* Style.css in Resources */,
+				A1B57DBC2FFDA29B00DCC6DA /* Main.storyboard in Resources */,
+				A1B57DD92FFDA29B00DCC6DA /* Script.js in Resources */,
+				A1B57DDD2FFDA29B00DCC6DA /* Assets.xcassets in Resources */,
+				A1B57DD32FFDA29B00DCC6DA /* Main.html in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A1B57DC02FFDA29B00DCC6DA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1B57DFF2FFDA29B00DCC6DA /* content in Resources */,
+				A1B57E002FFDA29B00DCC6DA /* shared in Resources */,
+				A1B57DFE2FFDA29B00DCC6DA /* background.js in Resources */,
+				A1B57E012FFDA29B00DCC6DA /* icons in Resources */,
+				A1B57E022FFDA29B00DCC6DA /* manifest.json in Resources */,
+				A1B57DFD2FFDA29B00DCC6DA /* popup in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A1B57DCA2FFDA29B00DCC6DA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1B57DF92FFDA29B00DCC6DA /* content in Resources */,
+				A1B57DFA2FFDA29B00DCC6DA /* shared in Resources */,
+				A1B57DF82FFDA29B00DCC6DA /* background.js in Resources */,
+				A1B57DFB2FFDA29B00DCC6DA /* icons in Resources */,
+				A1B57DFC2FFDA29B00DCC6DA /* manifest.json in Resources */,
+				A1B57DF72FFDA29B00DCC6DA /* popup in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A1B57DA02FFDA29B00DCC6DA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1B57DDA2FFDA29B00DCC6DA /* ViewController.swift in Sources */,
+				A1B57DA82FFDA29B00DCC6DA /* AppDelegate.swift in Sources */,
+				A1B57DAA2FFDA29B00DCC6DA /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A1B57DB22FFDA29B00DCC6DA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1B57DDB2FFDA29B00DCC6DA /* ViewController.swift in Sources */,
+				A1B57DB92FFDA29B00DCC6DA /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A1B57DBE2FFDA29B00DCC6DA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1B57DDE2FFDA29B00DCC6DA /* SafariWebExtensionHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A1B57DC82FFDA29B00DCC6DA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1B57DDF2FFDA29B00DCC6DA /* SafariWebExtensionHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A1B57DC52FFDA29B00DCC6DA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A1B57DC12FFDA29B00DCC6DA /* Dark Safari Extension (iOS) */;
+			targetProxy = A1B57DC42FFDA29B00DCC6DA /* PBXContainerItemProxy */;
+		};
+		A1B57DCF2FFDA29B00DCC6DA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A1B57DCB2FFDA29B00DCC6DA /* Dark Safari Extension (macOS) */;
+			targetProxy = A1B57DCE2FFDA29B00DCC6DA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A1B57D972FFDA29A00DCC6DA /* Main.html */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A1B57D982FFDA29A00DCC6DA /* Base */,
+			);
+			name = Main.html;
+			sourceTree = "<group>";
+		};
+		A1B57DAB2FFDA29B00DCC6DA /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A1B57DAC2FFDA29B00DCC6DA /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		A1B57DAE2FFDA29B00DCC6DA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A1B57DAF2FFDA29B00DCC6DA /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A1B57DBA2FFDA29B00DCC6DA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A1B57DBB2FFDA29B00DCC6DA /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A1B57DE02FFDA29B00DCC6DA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A1B57DE12FFDA29B00DCC6DA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		A1B57DE32FFDA29B00DCC6DA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "iOS (Extension)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Dark Safari Extension";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jblik.DarkSafari.Extension;
+				PRODUCT_NAME = "Dark Safari Extension";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A1B57DE42FFDA29B00DCC6DA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "iOS (Extension)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Dark Safari Extension";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jblik.DarkSafari.Extension;
+				PRODUCT_NAME = "Dark Safari Extension";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A1B57DE72FFDA29B00DCC6DA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "iOS (App)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Dark Safari";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+					"-framework",
+					WebKit,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jblik.DarkSafari;
+				PRODUCT_NAME = "Dark Safari";
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A1B57DE82FFDA29B00DCC6DA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "iOS (App)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Dark Safari";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+					"-framework",
+					WebKit,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jblik.DarkSafari;
+				PRODUCT_NAME = "Dark Safari";
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A1B57DEA2FFDA29B00DCC6DA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "macOS (Extension)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Dark Safari Extension";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jblik.DarkSafari.Extension;
+				PRODUCT_NAME = "Dark Safari Extension";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		A1B57DEB2FFDA29B00DCC6DA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "macOS (Extension)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Dark Safari Extension";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jblik.DarkSafari.Extension;
+				PRODUCT_NAME = "Dark Safari Extension";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		A1B57DEE2FFDA29B00DCC6DA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "macOS (App)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Dark Safari";
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+					"-framework",
+					WebKit,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jblik.DarkSafari;
+				PRODUCT_NAME = "Dark Safari";
+				REGISTER_APP_GROUPS = YES;
+				SDKROOT = macosx;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		A1B57DEF2FFDA29B00DCC6DA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "macOS (App)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Dark Safari";
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+					"-framework",
+					WebKit,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jblik.DarkSafari;
+				PRODUCT_NAME = "Dark Safari";
+				REGISTER_APP_GROUPS = YES;
+				SDKROOT = macosx;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A1B57D942FFDA29A00DCC6DA /* Build configuration list for PBXProject "Dark Safari" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A1B57DE02FFDA29B00DCC6DA /* Debug */,
+				A1B57DE12FFDA29B00DCC6DA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A1B57DE22FFDA29B00DCC6DA /* Build configuration list for PBXNativeTarget "Dark Safari Extension (iOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A1B57DE32FFDA29B00DCC6DA /* Debug */,
+				A1B57DE42FFDA29B00DCC6DA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A1B57DE62FFDA29B00DCC6DA /* Build configuration list for PBXNativeTarget "Dark Safari (iOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A1B57DE72FFDA29B00DCC6DA /* Debug */,
+				A1B57DE82FFDA29B00DCC6DA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A1B57DE92FFDA29B00DCC6DA /* Build configuration list for PBXNativeTarget "Dark Safari Extension (macOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A1B57DEA2FFDA29B00DCC6DA /* Debug */,
+				A1B57DEB2FFDA29B00DCC6DA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A1B57DED2FFDA29B00DCC6DA /* Build configuration list for PBXNativeTarget "Dark Safari (macOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A1B57DEE2FFDA29B00DCC6DA /* Debug */,
+				A1B57DEF2FFDA29B00DCC6DA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A1B57D912FFDA29A00DCC6DA /* Project object */;
+}
