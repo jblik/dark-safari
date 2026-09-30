@@ -23,7 +23,6 @@ ship a dark theme are detected automatically and left alone.
 | `extension/shared/` | Settings model, storage, scope resolution |
 | `extension/content/` | Content script + CSS applying the dark theme |
 | `extension/popup/` | Toolbar popup UI |
-| `scripts/make_icons.py` | Generates the extension icons (not tracked in git) |
 | `test/` | Browser harnesses with a stubbed WebExtension API |
 | `xcode/Dark Safari/` | Xcode project wrapping the extension for macOS + iOS |
 
@@ -32,12 +31,6 @@ ship a dark theme are detected automatically and left alone.
 Prerequisites: Xcode (15+) with command line tools. The Xcode project
 references `extension/` directly, so extension changes need no regeneration —
 just rebuild.
-
-First, generate the icons (they are build artifacts and not tracked in git):
-
-```sh
-python3 scripts/make_icons.py
-```
 
 ### macOS
 
