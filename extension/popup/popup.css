@@ -1,0 +1,96 @@
+:root {
+  color-scheme: light dark;
+  --accent: #7a5cf0;
+  --border: color-mix(in srgb, currentColor 18%, transparent);
+}
+
+body {
+  margin: 0;
+  width: 280px;
+  font: 13px/1.4 -apple-system, system-ui, sans-serif;
+  padding: 12px;
+  box-sizing: border-box;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+h1 { font-size: 15px; margin: 0; }
+
+/* Scope tabs */
+#scopes {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 12px;
+}
+
+#scopes button {
+  flex: 1;
+  padding: 4px 6px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: none;
+  font: inherit;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+#scopes button.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+/* Sliders */
+.control { display: block; margin-bottom: 10px; }
+.control span { display: flex; justify-content: space-between; }
+.control output { opacity: 0.7; }
+.control input[type="range"] { width: 100%; accent-color: var(--accent); }
+
+.check { display: block; margin-bottom: 10px; }
+.check input { accent-color: var(--accent); }
+
+#reset {
+  width: 100%;
+  padding: 5px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: none;
+  font: inherit;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+/* Enabled toggle */
+.switch { position: relative; display: inline-block; width: 36px; height: 20px; }
+.switch input { opacity: 0; width: 0; height: 0; }
+.slider-toggle {
+  position: absolute;
+  inset: 0;
+  border-radius: 10px;
+  background: color-mix(in srgb, currentColor 25%, transparent);
+  transition: background 0.15s;
+}
+.slider-toggle::before {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  left: 2px;
+  top: 2px;
+  border-radius: 50%;
+  background: #fff;
+  transition: transform 0.15s;
+}
+.switch input:checked + .slider-toggle { background: var(--accent); }
+.switch input:checked + .slider-toggle::before { transform: translateX(16px); }
+
+/* Advanced + footer */
+#advanced-section { margin-top: 12px; border-top: 1px solid var(--border); padding-top: 8px; }
+#advanced-section summary { cursor: pointer; font-weight: 600; margin-bottom: 6px; }
+.hint { font-size: 11px; opacity: 0.6; margin: 6px 0 0; }
+footer.hint { text-align: center; margin-top: 10px; }

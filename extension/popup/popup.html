@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header>
+    <h1>Dark Safari</h1>
+    <label class="switch" title="Toggle dark mode for this scope">
+      <input type="checkbox" id="enabled">
+      <span class="slider-toggle"></span>
+    </label>
+  </header>
+
+  <nav id="scopes">
+    <button data-scope="global">Global</button>
+    <button data-scope="site" id="scope-site">This site</button>
+    <button data-scope="page" id="scope-page" hidden>This page</button>
+  </nav>
+
+  <main>
+    <label class="control">
+      <span>Brightness <output for="brightness"></output></span>
+      <input type="range" id="brightness" min="50" max="150" step="5">
+    </label>
+    <label class="control">
+      <span>Contrast <output for="contrast"></output></span>
+      <input type="range" id="contrast" min="50" max="150" step="5">
+    </label>
+    <label class="control">
+      <span>Warmth <output for="sepia"></output></span>
+      <input type="range" id="sepia" min="0" max="100" step="5">
+    </label>
+    <label class="check">
+      <input type="checkbox" id="grayscale"> Grayscale
+    </label>
+    <button id="reset">Reset this scope</button>
+  </main>
+
+  <details id="advanced-section">
+    <summary>Advanced</summary>
+    <label class="check">
+      <input type="checkbox" id="advanced"> Enable per-page settings
+    </label>
+    <p class="hint">Adds a “This page” scope so individual pages within a site can have their own settings.</p>
+  </details>
+
+  <footer class="hint">⌥⇧D toggle · ⌥⇧P cycle presets</footer>
+
+  <script src="../shared/browser.js"></script>
+  <script src="../shared/settings.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

@@ -63,6 +63,13 @@
     await DS.api.storage.local.set({ [mapName]: map });
   };
 
+  DS.clearOverride = async function (mapName, key) {
+    const data = await DS.api.storage.local.get(mapName);
+    const map = data[mapName] || {};
+    delete map[key];
+    await DS.api.storage.local.set({ [mapName]: map });
+  };
+
   DS.setGlobal = async function (patch) {
     const all = await DS.getAll();
     await DS.api.storage.local.set({ global: { ...all.global, ...patch } });
