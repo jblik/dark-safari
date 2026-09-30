@@ -11,11 +11,11 @@
         async get(keys) {
           const names = Array.isArray(keys) ? keys : [keys];
           const out = {};
-          for (const k of names) if (k in store) out[k] = store[k];
+          for (const k of names) if (k in store) out[k] = structuredClone(store[k]);
           return out;
         },
         async set(items) {
-          Object.assign(store, items);
+          Object.assign(store, structuredClone(items));
           listeners.forEach((fn) => fn(items, "local"));
         }
       },
