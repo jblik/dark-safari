@@ -28,9 +28,8 @@ ship a dark theme are detected automatically and left alone.
 
 ## Installation
 
-Prerequisites: Xcode (15+) with command line tools. The Xcode project
-references `extension/` directly, so extension changes need no regeneration —
-just rebuild.
+Prerequisites: Xcode with command line tools. The Xcode project references `extension/` directly,
+so extension changes need no regeneration, just rebuild.
 
 An unsigned build only survives while Safari's "Allow unsigned extensions" is
 ticked, which resets every time Safari quits. Signing the app makes the
@@ -41,8 +40,8 @@ iOS.
    Apple ID. A free Apple ID ("Personal Team") issues an *Apple Development*
    certificate, which is enough for the extension to persist on your own
    devices.
-2. **Assign the team.** For all four targets — `Dark Safari` and
-   `Dark Safari Extension` on both macOS and iOS — open Signing & Capabilities,
+2. **Assign the team.** For all four targets `Dark Safari` and
+   `Dark Safari Extension` on both macOS and iOS: open Signing & Capabilities,
    keep "Automatically manage signing" checked, and set Team to your account.
    (There are no entitlements or app groups to reconcile.) If a Personal Team
    reports the bundle IDs as taken, change the `com.jblik` prefix to something
@@ -50,8 +49,7 @@ iOS.
 
 ### macOS
 
-Build Release and install to `/Applications` (a shared location — `sudo` — so
-every user account on the Mac can see the app):
+Build Release and install to `/Applications` (a shared location so every user account on the Mac can see the app):
 
 ```sh
 xcodebuild -project "xcode/Dark Safari/Dark Safari.xcodeproj" \
@@ -65,8 +63,7 @@ Launching the app registers the extension with Safari. Extension enablement is
 per-user: in each macOS account, Safari → Settings → Extensions → enable
 **Dark Safari**, then grant website access ("Always Allow on Every Website", or
 per-site via the toolbar button). Because the app is properly signed, it stays
-enabled across restarts — no "Allow unsigned extensions" needed. Other users
-may see a one-time Gatekeeper prompt on first launch.
+enabled across restarts. Other users may see a one-time Gatekeeper prompt on first launch.
 
 Verify the signature:
 
@@ -84,8 +81,8 @@ First, you must enable Developer Mode on your device: Privacy & Security → Sec
 
 The iOS targets share the same extension sources; you need the iOS platform SDK
 installed (Xcode → Settings → Components). Open the project in Xcode, pick the
-**Dark Safari (iOS)** scheme, select your connected device, and press Run —
-this builds, signs, and installs the app on the device.
+**Dark Safari (iOS)** scheme, select your connected device, and press Run.
+This builds, signs, and installs the app on the device.
 
 If you cannot see these settings, navigate from the menu bar: Product → Destination → iOS Device.
 Then Run.
