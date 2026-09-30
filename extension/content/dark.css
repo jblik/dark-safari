@@ -1,0 +1,26 @@
+/* Dark Safari: filter-based dark mode.
+ * The whole page is inverted + hue-rotated on <html>; display adjustments
+ * come in via CSS variables so the content script only updates numbers.
+ * Photographic media is re-inverted so it keeps its natural colors. */
+
+html[data-dark-safari] {
+  filter: invert(1) hue-rotate(180deg)
+    brightness(var(--ds-brightness, 1))
+    contrast(var(--ds-contrast, 1))
+    sepia(var(--ds-sepia, 0))
+    grayscale(var(--ds-grayscale, 0)) !important;
+  /* White canvas so the root inversion yields a dark page background. */
+  background-color: #fff !important;
+  color-scheme: light !important;
+}
+
+/* Re-invert media so photos/videos look natural. Frames are excluded:
+ * the content script runs in all frames and darkens them directly. */
+html[data-dark-safari] :is(img, video, canvas, picture source, embed, object):not([data-ds-keep]) {
+  filter: invert(1) hue-rotate(180deg) !important;
+}
+
+/* Background-image elements flagged by the content script. */
+html[data-dark-safari] [data-ds-bg-image] {
+  filter: invert(1) hue-rotate(180deg) !important;
+}
