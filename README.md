@@ -18,13 +18,13 @@ ship a dark theme are detected automatically and left alone.
 
 ## Repository layout
 
-| Path | Purpose |
-| --- | --- |
-| `extension/` | The web extension itself (shared across all platforms) |
-| `extension/shared/` | Settings model, storage, scope resolution |
-| `extension/content/` | Content script + CSS applying the dark theme |
-| `extension/popup/` | Toolbar popup UI |
-| `xcode/Dark Safari/` | Xcode project wrapping the extension for macOS + iOS |
+| Path                 | Purpose                                                |
+|----------------------|--------------------------------------------------------|
+| `extension/`         | The web extension itself (shared across all platforms) |
+| `extension/shared/`  | Settings model, storage, scope resolution              |
+| `extension/content/` | Content script + CSS applying the dark theme           |
+| `extension/popup/`   | Toolbar popup UI                                       |
+| `xcode/Dark Safari/` | Xcode project wrapping the extension for macOS + iOS   |
 
 ## Installation
 
