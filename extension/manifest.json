@@ -11,6 +11,7 @@
     "512": "icons/icon-512.png"
   },
   "background": {
+    "scripts": ["shared/browser.js", "shared/settings.js", "background.js"],
     "service_worker": "background.js"
   },
   "content_scripts": [

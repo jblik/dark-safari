@@ -1,7 +1,9 @@
 // Background service worker: handles keyboard commands.
 //   toggle-dark   — flips dark mode for the active tab's site (site override)
 //   cycle-preset  — steps the global settings through DS.PRESETS
-importScripts("shared/browser.js", "shared/settings.js");
+// Safari loads the "scripts" array (shared modules already present);
+// Chromium runs this as a service worker and needs importScripts.
+if (!globalThis.DS) importScripts("shared/browser.js", "shared/settings.js");
 
 const DS = globalThis.DS;
 
@@ -18,7 +20,7 @@ async function toggleDark() {
     return;
   }
   const effective = DS.resolve(all, url);
-  await DS.setOverride("sites", DS.siteKey(url), { enabled: !effective.enabled }, all.global);
+  await DS.setOverride("sites", DS.siteKey(url), { enabled: !effective.enabled }, DS.siteParent(all, url));
 }
 
 async function cyclePreset() {

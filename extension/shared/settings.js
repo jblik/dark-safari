@@ -5,8 +5,10 @@
 //   sites:    { host: partial settings }          — per-website overrides
 //   pages:    { host+path: partial settings }     — per-page overrides (Advanced)
 //   advanced: bool                                — per-page granularity opt-in
+//   autoDark: { host: true }                      — sites detected as natively dark
 //
-// Effective settings for a URL = global ⊕ sites[host] ⊕ (advanced ? pages[key] : {})
+// Effective settings for a URL = global ⊕ sites[host] ⊕ (advanced ? pages[key] : {}).
+// A site flagged in autoDark is disabled unless an override sets "enabled" explicitly.
 (function (global) {
   "use strict";
   const DS = global.DS || (global.DS = {});
@@ -33,18 +35,27 @@
   };
 
   DS.getAll = async function () {
-    const data = await DS.api.storage.local.get(["global", "sites", "pages", "advanced"]);
+    const data = await DS.api.storage.local.get(["global", "sites", "pages", "advanced", "autoDark"]);
     return {
       global: { ...DS.DEFAULTS, ...data.global },
       sites: data.sites || {},
       pages: data.pages || {},
-      advanced: !!data.advanced
+      advanced: !!data.advanced,
+      autoDark: data.autoDark || {}
     };
+  };
+
+  // Global settings as seen by a site: autoDark turns "enabled" off, but only
+  // as a default — explicit site/page overrides (handled in resolve) win.
+  DS.siteParent = function (all, url) {
+    const parent = { ...all.global };
+    if (all.autoDark[DS.siteKey(url)]) parent.enabled = false;
+    return parent;
   };
 
   // Effective settings for a URL, merging global → site → page scopes.
   DS.resolve = function (all, url) {
-    let merged = { ...all.global, ...all.sites[DS.siteKey(url)] };
+    let merged = { ...DS.siteParent(all, url), ...all.sites[DS.siteKey(url)] };
     if (all.advanced) merged = { ...merged, ...all.pages[DS.pageKey(url)] };
     return merged;
   };
@@ -61,6 +72,14 @@
     if (Object.keys(entry).length) map[key] = entry;
     else delete map[key];
     await DS.api.storage.local.set({ [mapName]: map });
+  };
+
+  DS.setAutoDark = async function (host, isDark) {
+    const data = await DS.api.storage.local.get("autoDark");
+    const map = data.autoDark || {};
+    if (isDark) map[host] = true;
+    else delete map[host];
+    await DS.api.storage.local.set({ autoDark: map });
   };
 
   DS.clearOverride = async function (mapName, key) {

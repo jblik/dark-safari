@@ -14,9 +14,17 @@
   // Effective values seen at each scope, and the parent used for overrides.
   function scopeValues() {
     if (scope === "global" || !url) return { values: all.global, parent: DS.DEFAULTS };
-    const site = { ...all.global, ...all.sites[DS.siteKey(url)] };
-    if (scope === "site") return { values: site, parent: all.global };
+    const parent = DS.siteParent(all, url);
+    const site = { ...parent, ...all.sites[DS.siteKey(url)] };
+    if (scope === "site") return { values: site, parent };
     return { values: { ...site, ...all.pages[DS.pageKey(url)] }, parent: site };
+  }
+
+  function autoDisabled() {
+    if (!url) return false;
+    const site = all.sites[DS.siteKey(url)] || {};
+    const page = all.advanced ? all.pages[DS.pageKey(url)] || {} : {};
+    return !!all.autoDark[DS.siteKey(url)] && !("enabled" in site) && !("enabled" in page);
   }
 
   async function save(patch) {
@@ -36,6 +44,7 @@
       $(id).value = values[id];
       document.querySelector(`output[for="${id}"]`).textContent = `${values[id]}%`;
     }
+    $("auto-note").hidden = !autoDisabled();
     $("advanced").checked = all.advanced;
     $("scope-page").hidden = !all.advanced;
     if (!all.advanced && scope === "page") scope = "site";
