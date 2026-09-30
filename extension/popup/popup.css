@@ -94,3 +94,35 @@ h1 { font-size: 15px; margin: 0; }
 #advanced-section summary { cursor: pointer; font-weight: 600; margin-bottom: 6px; }
 .hint { font-size: 11px; opacity: 0.6; margin: 6px 0 0; }
 footer.hint { text-align: center; margin-top: 10px; }
+
+/* Touch devices (iOS/iPadOS): the popup is presented as a full-width sheet, so
+   fill it and scale controls up to comfortable tap targets instead of the
+   fixed 280px / 13px macOS layout. */
+@media (pointer: coarse) {
+  body {
+    width: 100%;
+    max-width: 480px;
+    font-size: 17px;
+    padding: 20px;
+  }
+  h1 { font-size: 22px; }
+  header { margin-bottom: 16px; }
+
+  #scopes { gap: 8px; margin-bottom: 20px; }
+  #scopes button { padding: 12px 8px; font-size: 16px; border-radius: 10px; }
+
+  .control { margin-bottom: 22px; }
+  .control input[type="range"] { height: 28px; }
+  .check { margin-bottom: 18px; }
+  .check input { width: 22px; height: 22px; }
+
+  #reset { padding: 14px; font-size: 16px; border-radius: 10px; }
+
+  /* Larger on/off switch */
+  .switch { width: 52px; height: 30px; }
+  .slider-toggle { border-radius: 15px; }
+  .slider-toggle::before { width: 26px; height: 26px; }
+  .switch input:checked + .slider-toggle::before { transform: translateX(22px); }
+
+  .hint { font-size: 14px; }
+}

@@ -11,6 +11,41 @@
   let url = null;
   let scope = "global";
 
+  // Footer shortcut hints, built from the shortcuts actually registered (and
+  // any the user has customised in Safari's settings) rather than hardcoded.
+  const SHORTCUT_ORDER = ["toggle-dark", "toggle-page", "cycle-preset", "_execute_action"];
+  const SHORTCUT_LABELS = {
+    "_execute_action": "open",
+    "toggle-dark": "toggle site",
+    "toggle-page": "toggle page",
+    "cycle-preset": "cycle presets"
+  };
+
+  // "Alt+Shift+D" → "⌥⇧D" (also handles Command/Ctrl/MacCtrl aliases).
+  function prettyShortcut(s) {
+    return s
+      .replace(/Command|Cmd/g, "⌘")
+      .replace(/MacCtrl|Ctrl|Control/g, "⌃")
+      .replace(/Alt|Option/g, "⌥")
+      .replace(/Shift/g, "⇧")
+      .replace(/\+/g, "");
+  }
+
+  async function renderShortcuts() {
+    const foot = $("shortcuts");
+    let cmds;
+    try {
+      cmds = await DS.api.commands.getAll();
+    } catch (e) { return; } // commands API unavailable: leave footer empty
+    const byName = {};
+    for (const c of cmds) byName[c.name] = c;
+    const parts = SHORTCUT_ORDER
+      .map((name) => byName[name])
+      .filter((c) => c && c.shortcut)
+      .map((c) => `${prettyShortcut(c.shortcut)} ${SHORTCUT_LABELS[c.name] || c.description || c.name}`);
+    foot.textContent = parts.length ? parts.join(" · ") : "No keyboard shortcuts set";
+  }
+
   // Effective values seen at each scope, and the parent used for overrides.
   function scopeValues() {
     if (scope === "global" || !url) return { values: all.global, parent: DS.DEFAULTS };
@@ -91,6 +126,7 @@
     }
     wire();
     render();
+    renderShortcuts();
   }
 
   init();

@@ -12,8 +12,9 @@ ship a dark theme are detected automatically and left alone.
 - Per-website overrides, and optional per-page overrides ("Advanced")
 - Auto-detects natively dark sites and disables itself there (an explicit
   toggle always wins)
-- Keyboard shortcuts: ⌥⇧D toggle for the current site · ⌥⇧P cycle presets ·
-  ⌥⇧F open the popup
+- Keyboard shortcuts: ⌥⇧D toggle the current site · ⌥⇧G toggle the current
+  page · ⌥⇧P cycle presets · ⌥⇧F open the popup (all rebindable in Safari's
+  settings)
 
 ## Repository layout
 
@@ -79,10 +80,15 @@ and your Team ID — not `adhoc`.
 
 ### iPhone / iPad
 
+First, you must enable Developer Mode on your device: Privacy & Security → Security → Developer Mode.
+
 The iOS targets share the same extension sources; you need the iOS platform SDK
 installed (Xcode → Settings → Components). Open the project in Xcode, pick the
 **Dark Safari (iOS)** scheme, select your connected device, and press Run —
 this builds, signs, and installs the app on the device.
+
+If you cannot see these settings, navigate from the menu bar: Product → Destination → iOS Device.
+Then Run.
 
 On a Personal Team build, the first launch is blocked until you trust the
 profile: on the device, Settings → General → VPN & Device Management → your

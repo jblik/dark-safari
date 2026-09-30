@@ -32,9 +32,17 @@
   },
   "permissions": ["storage", "tabs"],
   "commands": {
+    "_execute_action": {
+      "suggested_key": { "default": "Alt+Shift+F" },
+      "description": "Open the Dark Safari popup"
+    },
     "toggle-dark": {
       "suggested_key": { "default": "Alt+Shift+D" },
       "description": "Toggle dark mode for the current site"
+    },
+    "toggle-page": {
+      "suggested_key": { "default": "Alt+Shift+G" },
+      "description": "Toggle dark mode for the current page"
     },
     "cycle-preset": {
       "suggested_key": { "default": "Alt+Shift+P" },
