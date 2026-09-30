@@ -6,9 +6,9 @@ ship a dark theme are detected automatically and left alone.
 
 ## Features
 
-- Dark mode via CSS filters on every site; photos, video and canvas keep
+- Dark mode via CSS filters on every site; photos, video, and canvas keep
   their natural colors
-- Brightness, contrast and warmth sliders, plus a grayscale toggle
+- Brightness, contrast, and warmth sliders, plus a grayscale toggle
 - Per-website overrides, and optional per-page overrides ("Advanced")
 - Auto-detects natively dark sites and disables itself there (an explicit
   toggle always wins)
@@ -23,74 +23,72 @@ ship a dark theme are detected automatically and left alone.
 | `extension/shared/` | Settings model, storage, scope resolution |
 | `extension/content/` | Content script + CSS applying the dark theme |
 | `extension/popup/` | Toolbar popup UI |
-| `test/` | Browser harnesses with a stubbed WebExtension API |
 | `xcode/Dark Safari/` | Xcode project wrapping the extension for macOS + iOS |
 
-## Building
+## Installation
 
 Prerequisites: Xcode (15+) with command line tools. The Xcode project
 references `extension/` directly, so extension changes need no regeneration —
 just rebuild.
 
+An unsigned build only survives while Safari's "Allow unsigned extensions" is
+ticked, which resets every time Safari quits. Signing the app makes the
+extension persist across restarts; the same signing setup covers both macOS and
+iOS.
+
+1. **Get a signing certificate.** In Xcode → Settings → Accounts, add your
+   Apple ID. A free Apple ID ("Personal Team") issues an *Apple Development*
+   certificate, which is enough for the extension to persist on your own
+   devices.
+2. **Assign the team.** For all four targets — `Dark Safari` and
+   `Dark Safari Extension` on both macOS and iOS — open Signing & Capabilities,
+   keep "Automatically manage signing" checked, and set Team to your account.
+   (There are no entitlements or app groups to reconcile.) If a Personal Team
+   reports the bundle IDs as taken, change the `com.jblik` prefix to something
+   unique.
+
 ### macOS
+
+Build Release and install to `/Applications` (a shared location — `sudo` — so
+every user account on the Mac can see the app):
 
 ```sh
 xcodebuild -project "xcode/Dark Safari/Dark Safari.xcodeproj" \
-  -scheme "Dark Safari (macOS)" -configuration Debug \
+  -scheme "Dark Safari (macOS)" -configuration Release \
   -derivedDataPath xcode/DerivedData build
-open "xcode/DerivedData/Build/Products/Debug/Dark Safari.app"
+sudo cp -R "xcode/DerivedData/Build/Products/Release/Dark Safari.app" /Applications/
+open "/Applications/Dark Safari.app"
 ```
 
-Launching the app registers the extension with Safari. Then, in Safari:
+Launching the app registers the extension with Safari. Extension enablement is
+per-user: in each macOS account, Safari → Settings → Extensions → enable
+**Dark Safari**, then grant website access ("Always Allow on Every Website", or
+per-site via the toolbar button). Because the app is properly signed it stays
+enabled across restarts — no "Allow unsigned extensions" needed. Other users
+may see a one-time Gatekeeper prompt on first launch.
 
-1. Settings → Advanced → enable "Show features for web developers" (once)
-2. Settings → Developer → check **Allow unsigned extensions** (needs your
-   password; resets when Safari quits — a real signing team removes this step)
-3. Settings → Extensions → enable **Dark Safari**
-4. Grant website access: "Always Allow on Every Website", or per-site via the
-   toolbar button
+Verify the signature:
 
-Faster dev loop (skips the app entirely): Settings → Developer →
-**Add Temporary Extension…** → select the `extension/` folder. Use the
-Reload button in the Extensions pane after code changes.
+```sh
+codesign -dv --verbose=4 "/Applications/Dark Safari.app" 2>&1 \
+  | grep -E "Authority|TeamIdentifier"
+```
+
+You should see an "Apple Development" (or "Developer ID Application") authority
+and your Team ID — not `adhoc`.
 
 ### iPhone / iPad
 
-The iOS target shares the same extension sources. You need the iOS platform
-SDK installed (Xcode → Settings → Components) and, for a real device, a
-development team set on the targets.
+The iOS targets share the same extension sources; you need the iOS platform SDK
+installed (Xcode → Settings → Components). Open the project in Xcode, pick the
+**Dark Safari (iOS)** scheme, select your connected device, and press Run —
+this builds, signs, and installs the app on the device.
 
-Simulator:
+On a Personal Team build, the first launch is blocked until you trust the
+profile: on the device, Settings → General → VPN & Device Management → your
+Apple ID → Trust.
 
-```sh
-xcodebuild -project "xcode/Dark Safari/Dark Safari.xcodeproj" \
-  -scheme "Dark Safari (iOS)" -configuration Debug \
-  -destination 'platform=iOS Simulator,name=iPhone 16' build
-```
+Then enable the extension: Settings → Apps → Safari → Extensions → Dark Safari
+→ turn it on and allow it for all websites. The popup with all controls is
+reachable from the puzzle/extension button in Safari's address bar.
 
-Or open the project in Xcode, pick the "Dark Safari (iOS)" scheme and run.
-On the device/simulator: run the app once, then Settings → Apps → Safari →
-Extensions → Dark Safari → enable it and allow it for all websites. The
-popup with all controls is reachable from the puzzle/extension button in
-Safari's address bar.
-
-### Distribution
-
-For the App Store or notarized distribution, set your team on all four
-targets in Xcode (Signing & Capabilities) and archive both platform schemes.
-Signed builds don't need "Allow unsigned extensions".
-
-## Testing without Safari
-
-`test/harness.html` and `test/harness-dark.html` run the real content script
-against a stubbed `browser.storage` API; `test/popup-harness.html` does the
-same for the popup. Serve the repo root and open them:
-
-```sh
-python3 -m http.server 8642
-# http://localhost:8642/test/harness.html
-```
-
-`test/plain.html` has no stubs — it only turns dark when a real extension
-build is active in the browser, which makes it useful for verifying the
-Safari install.
