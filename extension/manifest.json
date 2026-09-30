@@ -1,0 +1,43 @@
+{
+  "manifest_version": 3,
+  "name": "Dark Safari",
+  "version": "1.0",
+  "description": "Configurable dark mode for every website: brightness, contrast, warmth and grayscale, with per-site and per-page overrides.",
+  "icons": {
+    "48": "icons/icon-48.png",
+    "96": "icons/icon-96.png",
+    "128": "icons/icon-128.png",
+    "256": "icons/icon-256.png",
+    "512": "icons/icon-512.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["shared/browser.js", "shared/settings.js", "content/dark.js"],
+      "css": ["content/dark.css"],
+      "run_at": "document_start",
+      "all_frames": true
+    }
+  ],
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "48": "icons/icon-48.png",
+      "96": "icons/icon-96.png"
+    }
+  },
+  "permissions": ["storage", "tabs"],
+  "commands": {
+    "toggle-dark": {
+      "suggested_key": { "default": "Alt+Shift+D" },
+      "description": "Toggle dark mode for the current site"
+    },
+    "cycle-preset": {
+      "suggested_key": { "default": "Alt+Shift+P" },
+      "description": "Cycle through dark mode presets"
+    }
+  }
+}
